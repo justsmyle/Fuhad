@@ -1,0 +1,97 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Quotes | Fuhad</title>
+  <style>
+    body {
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1rem;
+    }
+    .card {
+      background: #1e293b;
+      padding: 2rem;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 100%;
+      border: 1px solid #334155;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #f1f5f9;
+    }
+    #quote {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      min-height: 80px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+    #author {
+      color: #60a5fa;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    button {
+      background: #1a73e8;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button:hover {
+      background: #1557b0;
+    }
+    a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: #60a5fa;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Dev Quote Generator</h1>
+    <p id="quote">Click the button for wisdom from 3am coders</p>
+    <p id="author"></p>
+    <button onclick="newQuote()">New Quote</button>
+    <br>
+    <a href="index.html">← Back to Portfolio</a>
+  </div>
+
+  <script>
+    const quotes = [
+      { text: "It's not a bug, it's an undocumented feature.", author: "Anonymous" },
+      { text: "Code is like humor. When you have to explain it, it's bad.", author: "Cory House" },
+      { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
+      { text: "Shipped from Android at 3am using Git.", author: "Fuhad Yunus" },
+      { text: "The best error message is the one that never shows up.", author: "Thomas Fuchs" },
+      { text: "3AM Debugging is a legitimate skill.", author: "You, tonight" },
+      { text: "There are 2 hard problems in CS: cache invalidation, naming things, and off-by-1 errors.", author: "Leon Bambrick" }
+    ];
+
+    function newQuote() {
+      const random = Math.floor(Math.random() * quotes.length);
+      document.getElementById('quote').textContent = `"${quotes[random].text}"`;
+      document.getElementById('author').textContent = `— ${quotes[random].author}`;
+    }
+    
+    // Load first quote
+    newQuote();
+  </script>
+</body>
+</html>
